@@ -59,7 +59,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/categories/学习资料/">学习资料</a></li>
+	        
+				<li><a href="/categories/教程/">教程</a></li>
 	        
 			</ul>
 		</nav>
@@ -85,7 +87,7 @@
 		        
 					<a class="weibo" target="_blank" href="https://weibo.com/u/2519489412" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+					<a class="qq" target="_blank" href="tencent://message/?uin=462159643&Site=&menu=yes" title="qq"><i class="icon-qq"></i></a>
 		        
 					<a class="mail" target="_blank" href="mailto:lodr@vip.qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
@@ -117,6 +119,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -126,7 +130,7 @@
 			        
 						<a class="weibo" target="_blank" href="https://weibo.com/u/2519489412" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+						<a class="qq" target="_blank" href="tencent://message/?uin=462159643&Site=&menu=yes" title="qq"><i class="icon-qq"></i></a>
 			        
 						<a class="mail" target="_blank" href="mailto:lodr@vip.qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
@@ -134,12 +138,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/categories/学习资料/">学习资料</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/categories/教程/">教程</a></li>
 		        
 				</ul>
 			</nav>
@@ -198,6 +204,432 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/05/14/hello-world/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hexo发布文章到个人博客上" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/18/hexo发布文章到个人博客上/">hexo发布文章到个人博客上</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/18/hexo发布文章到个人博客上/" class="archive-article-date">
+  	<time datetime="2019-04-18T12:27:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>用github+hexo搭建完个人博客后，朋友们应该很想知道怎么在上面写博文吧，这里介绍一个很简单的方法</p>
+<p>使用MarkDown编辑器（自己到网上搜一个），写好文章后，以md格式保存到本地，然后copy该md文件，粘贴到你当初建的博客站点文件夹下的source\ _posts目录下，一个md文件对应一篇博客文章。</p>
+<p>接着在你博客站点文件夹下右键空白处，</p>
+<p>选择Git Bash Here，输入：</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; hexo generate</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>回车，生成静态页面，<br>再输入：</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; hexo server</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>回车，生成web环境预览</p>
+<p>到localhost:4000预览博客效果， </p>
+<p>最后输入：</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; hexo deploy</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>回车，同步到github上去就行了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">hexo发布文章</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/学习资料//" class="article-tag-list-link color5">学习资料</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/18/hexo发布文章到个人博客上/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-数据库练习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/11/数据库练习/">数据库练习</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/11/数据库练习/" class="archive-article-date">
+  	<time datetime="2019-02-11T10:27:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>进入数据库： mysql -u root -p</p>
+<p>show databases; 查看所有数据库名称</p>
+<p>创建数据库： CREATE DATABASE 库名;</p>
+<p>drop database &lt;数据库名&gt;；删除数据库</p>
+<p>use database； 切换数据库</p>
+<p>show tables； 查看数据库下表名称</p>
+<p>show columns from tables；查看表中的字段名称</p>
+<p>修改数据库密码</p>
+<p>#cmd,运行DOS，cd到mysql的bin文件夹，然后执行如下 D:\Mysql\bin&gt;mysqladmin -u root -p password newPwd #Enter password:(在此输入原密码) #newPwd指的是新密码</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">数据库练习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/学习资料//" class="article-tag-list-link color5">学习资料</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/11/数据库练习/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-centos7下利用ASF V4实现steam云挂卡" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/18/centos7下利用ASF V4实现steam云挂卡/">centos7下利用ASF实现steam云挂卡</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/18/centos7下利用ASF V4实现steam云挂卡/" class="archive-article-date">
+  	<time datetime="2019-01-18T12:27:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本次使用的搬瓦工美国服务器，系统为centos7。（国内服务器总是因为网络问题出现各种奇奇怪怪的问题）</p>
+<p>国内服务器需要安装ASCF，才能正常使用ASF（ASCF项目链接：<a href="https://steamcn.com/t339641-1-1）" target="_blank" rel="noopener">https://steamcn.com/t339641-1-1）</a></p>
+<h3 id="一、环境搭建"><a href="#一、环境搭建" class="headerlink" title="一、环境搭建"></a>一、环境搭建</h3><p>虽然ASF支持linux，但实际上是个C#程序，需要微软的 .Net Core 2.0环境。（微软官方安装文档：<a href="https://www.microsoft.com/net/learn/get-started/linux/centos）" target="_blank" rel="noopener">https://www.microsoft.com/net/learn/get-started/linux/centos）</a></p>
+<p><strong>1.添加Microsoft产品feed</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc</span><br></pre></td></tr></table></figure>
+<p><strong>2.添加yum安装源</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c &apos;echo -e &quot;[packages-microsoft-com-prod]\nname=packages-microsoft-com-prod \nbaseurl=https://packages.microsoft.com/yumrepos/microsoft-rhel7.3-prod\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc&quot; &gt; /etc/yum.repos.d/dotnetdev.repo&apos;</span><br></pre></td></tr></table></figure>
+<p>这两步运行完不会有任何提示，如果第三步找不到dotnet请检查上面的命令有没有复制全。</p>
+<p><strong>3.安装 .Net Core 2.0</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y update</span><br><span class="line">yum -y install libunwind libicu</span><br><span class="line">yum -y install dotnet-sdk-2.0.0</span><br></pre></td></tr></table></figure>
+<p>安装完成截图</p>
+<p><img src="assets/1522512453213483.png" alt="1522512453213483"></p>
+<p>这时候试一下 dotnet –vision 命令，如有回显版本即为安装完成。输入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dotnet --version</span><br></pre></td></tr></table></figure>
+<p>显示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2.0.0</span><br></pre></td></tr></table></figure>
+<h3 id="二、下载安装ASF"><a href="#二、下载安装ASF" class="headerlink" title="二、下载安装ASF"></a>二、下载安装ASF</h3><p><strong>1.下载ASF</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">wget https://github.com/JustArchiNET/ArchiSteamFarm/releases/download/4.0.1.9/ASF-linux-x64.zip</span><br></pre></td></tr></table></figure>
+<p>如果无法下载请用电脑下载到本地然后使用ftp工具传到你的服务器的/root文件夹，下载地址：<a href="https://github.com/JustArchiNET/ArchiSteamFarm/releases" target="_blank" rel="noopener">https://github.com/JustArchiNET/ArchiSteamFarm/releases</a> 同样centos请选择linux_x64版本。（一般都是国内服务器网络有问题）</p>
+<p><strong>2.解压ASF</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir asf</span><br><span class="line">mv ASF-linux-x64.zip asf/ASF-linux-x64.zip</span><br><span class="line">yum -y install unzip zip</span><br><span class="line">cd asf</span><br><span class="line">unzip ASF-linux-x64.zip</span><br></pre></td></tr></table></figure>
+<p>解压完成：</p>
+<p><img src="assets/1522513826341274.png" alt="1522513826341274"></p>
+<p><strong>四、配置ASF</strong></p>
+<p>配置文件生成地址：<a href="https://justarchinet.github.io/ASF-WebConfigGenerator/" target="_blank" rel="noopener">https://justarchinet.github.io/ASF-WebConfigGenerator/</a></p>
+<p>如图，简单挂卡只需要填入配置文件名称，steam账号和登录密码。最后别忘了把enable勾上。</p>
+<p><img src="assets/asf.png" alt></p>
+<p>完了把配置文件下载到本地电脑然后上传到asf的<font color="red">config文件夹</font>即可。如果有多个号可以填写多个配置文件都放到asf文件夹中，支持同时挂多个账号。</p>
+<p>（关于高级部分功能，有兴趣可以看官方WIKI：<a href="https://github.com/JustArchiNET/ArchiSteamFarm/wiki" target="_blank" rel="noopener">https://github.com/JustArchiNET/ArchiSteamFarm/wiki</a>）</p>
+<h3 id="五、运行ASF"><a href="#五、运行ASF" class="headerlink" title="五、运行ASF"></a>五、运行ASF</h3><p>为了能够让asf在关闭连接继续后台运行，需要使用tmux</p>
+<p>安装tmux（centos6无法使用yum安装）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install tmux</span><br></pre></td></tr></table></figure>
+<p>创建一个新的tmux窗口：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmux new -s asf</span><br></pre></td></tr></table></figure>
+<p>运行ASF：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd asf</span><br><span class="line">chmod +x ArchiSteamFarm</span><br><span class="line">./ArchiSteamFarm</span><br></pre></td></tr></table></figure>
+<p>退出请按下ctrl+b松开后按下d（不会打断后台运行）。如需要重新进入，使用命令 tmux a -t asf即可。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">centos7下利用ASF实现steam云挂卡</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ASF云挂卡</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/教程//" class="article-tag-list-link color3">教程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/18/centos7下利用ASF V4实现steam云挂卡/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-在CentOS7上搭建Teamspeak3服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/01/在CentOS7上搭建Teamspeak3服务器/">在centos7上搭建Teamspeaks3服务器</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/01/在CentOS7上搭建Teamspeak3服务器/" class="archive-article-date">
+  	<time datetime="2018-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="更新系统和依赖"><a href="#更新系统和依赖" class="headerlink" title="更新系统和依赖"></a>更新系统和依赖</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y update</span><br><span class="line">yum -y install nano wget perl tar net-tools bzip2</span><br></pre></td></tr></table></figure>
+<h4 id="添加用户安装TS"><a href="#添加用户安装TS" class="headerlink" title="添加用户安装TS"></a>添加用户安装TS</h4><p>使用普通用户权限运行TeamSpeak，隔离ts服务端与其他系统服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adduser teamspeak</span><br><span class="line">passwd teamspeak</span><br></pre></td></tr></table></figure>
+<p>会提示为新建的用户设置密码，这个密码之后不会用到。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget https://files.teamspeak-services.com/releases/server/3.6.0/teamspeak3-server_linux_amd64-3.6.0.tar.bz2</span><br><span class="line">cd teamspeak3-server_linux_amd64</span><br><span class="line">cp * -R /home/teamspeak</span><br><span class="line">cd ..</span><br><span class="line">rm -rf teamspeak3-server_linux_amd64*</span><br><span class="line">chown -R teamspeak:teamspeak /home/teamspeak</span><br></pre></td></tr></table></figure>
+<h4 id="设置TS服务和防火墙"><a href="#设置TS服务和防火墙" class="headerlink" title="设置TS服务和防火墙"></a>设置TS服务和防火墙</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /lib/systemd/system/teamspeak.service</span><br></pre></td></tr></table></figure>
+<p>在打开的文件编辑器里输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Team Speak 3 Server</span><br><span class="line">After=network.target</span><br><span class="line">[Service]</span><br><span class="line">WorkingDirectory=/home/teamspeak/</span><br><span class="line">User=teamspeak</span><br><span class="line">Group=teamspeak</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/home/teamspeak/ts3server_startscript.sh start inifile=ts3server.ini</span><br><span class="line">ExecStop=/home/teamspeak/ts3server_startscript.sh stop</span><br><span class="line">PIDFile=/home/teamspeak/ts3server.pid</span><br><span class="line">RestartSec=15</span><br><span class="line">Restart=always</span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure>
+<p>保存退出</p>
+<p>如果你的服务器打开了防火墙，就需要添加如下规则，对CentOS7上的firewall使用如下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=9987/udp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=10011/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=30033/tcp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<h4 id="启动TS服务"><a href="#启动TS服务" class="headerlink" title="启动TS服务"></a>启动TS服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl start teamspeak</span><br><span class="line">systemctl enable teamspeak</span><br></pre></td></tr></table></figure>
+<p>确保TeamSpeak服务正确运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status teamspeak</span><br></pre></td></tr></table></figure>
+<h4 id="管理员登陆TS服务器"><a href="#管理员登陆TS服务器" class="headerlink" title="管理员登陆TS服务器"></a>管理员登陆TS服务器</h4><p>TS服务器第一次运行时，会生成一个一次性的权限密钥，用于给你本地端设置管理员权限。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /home/teamspeak/logs/ts3server_*</span><br></pre></td></tr></table></figure>
+<p>应该能在最后几行看到ServerAdmin privilege key，登陆ts服务器，客户端输入token=后面的privilege key，你就是服务器管理员了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">centos7</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Teamspeaks3</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/学习资料//" class="article-tag-list-link color5">学习资料</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/01/在CentOS7上搭建Teamspeak3服务器/">展开全文 >></a>
         </p>
       
 
@@ -318,6 +750,30 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">centos7下利用ASF实现steam云挂卡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ASF云挂卡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">hexo发布文章</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Teamspeaks3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">数据库练习</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

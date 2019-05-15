@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://wernerhai.github.io">
-  <title>Archives: 2019 | 海深湛蓝</title>
+  <title>在centos7上搭建Teamspeaks3服务器 | 海深湛蓝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基于hexo的Github Pages个人博客网站">
-<meta name="keywords" content="海深湛蓝博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="海深湛蓝">
-<meta property="og:url" content="https://wernerhai.github.io/archives/2019/index.html">
+  <meta name="description" content="更新系统和依赖12yum -y updateyum -y install nano wget perl tar net-tools bzip2 添加用户安装TS使用普通用户权限运行TeamSpeak，隔离ts服务端与其他系统服务 12adduser teamspeakpasswd teamspeak 会提示为新建的用户设置密码，这个密码之后不会用到。 123456wget https://file">
+<meta name="keywords" content="centos7,Teamspeaks3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在centos7上搭建Teamspeaks3服务器">
+<meta property="og:url" content="https://wernerhai.github.io/2018/06/01/在CentOS7上搭建Teamspeak3服务器/index.html">
 <meta property="og:site_name" content="海深湛蓝">
-<meta property="og:description" content="基于hexo的Github Pages个人博客网站">
+<meta property="og:description" content="更新系统和依赖12yum -y updateyum -y install nano wget perl tar net-tools bzip2 添加用户安装TS使用普通用户权限运行TeamSpeak，隔离ts服务端与其他系统服务 12adduser teamspeakpasswd teamspeak 会提示为新建的用户设置密码，这个密码之后不会用到。 123456wget https://file">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-15T12:15:10.513Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="海深湛蓝">
-<meta name="twitter:description" content="基于hexo的Github Pages个人博客网站">
+<meta name="twitter:title" content="在centos7上搭建Teamspeaks3服务器">
+<meta name="twitter:description" content="更新系统和依赖12yum -y updateyum -y install nano wget perl tar net-tools bzip2 添加用户安装TS使用普通用户权限运行TeamSpeak，隔离ts服务端与其他系统服务 12adduser teamspeakpasswd teamspeak 会提示为新建的用户设置密码，这个密码之后不会用到。 123456wget https://file">
   
     <link rel="alternative" href="/atom.xml" title="海深湛蓝" type="application/atom+xml">
   
@@ -160,200 +161,208 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-在CentOS7上搭建Teamspeak3服务器" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      在centos7上搭建Teamspeaks3服务器
+    </h1>
+  
+
+        
+        <a href="/2018/06/01/在CentOS7上搭建Teamspeak3服务器/" class="archive-article-date">
+  	<time datetime="2018-06-01T15:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-01</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="更新系统和依赖"><a href="#更新系统和依赖" class="headerlink" title="更新系统和依赖"></a>更新系统和依赖</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum -y update</span><br><span class="line">yum -y install nano wget perl tar net-tools bzip2</span><br></pre></td></tr></table></figure>
+<h4 id="添加用户安装TS"><a href="#添加用户安装TS" class="headerlink" title="添加用户安装TS"></a>添加用户安装TS</h4><p>使用普通用户权限运行TeamSpeak，隔离ts服务端与其他系统服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adduser teamspeak</span><br><span class="line">passwd teamspeak</span><br></pre></td></tr></table></figure>
+<p>会提示为新建的用户设置密码，这个密码之后不会用到。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget https://files.teamspeak-services.com/releases/server/3.6.0/teamspeak3-server_linux_amd64-3.6.0.tar.bz2</span><br><span class="line">cd teamspeak3-server_linux_amd64</span><br><span class="line">cp * -R /home/teamspeak</span><br><span class="line">cd ..</span><br><span class="line">rm -rf teamspeak3-server_linux_amd64*</span><br><span class="line">chown -R teamspeak:teamspeak /home/teamspeak</span><br></pre></td></tr></table></figure>
+<h4 id="设置TS服务和防火墙"><a href="#设置TS服务和防火墙" class="headerlink" title="设置TS服务和防火墙"></a>设置TS服务和防火墙</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /lib/systemd/system/teamspeak.service</span><br></pre></td></tr></table></figure>
+<p>在打开的文件编辑器里输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Team Speak 3 Server</span><br><span class="line">After=network.target</span><br><span class="line">[Service]</span><br><span class="line">WorkingDirectory=/home/teamspeak/</span><br><span class="line">User=teamspeak</span><br><span class="line">Group=teamspeak</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/home/teamspeak/ts3server_startscript.sh start inifile=ts3server.ini</span><br><span class="line">ExecStop=/home/teamspeak/ts3server_startscript.sh stop</span><br><span class="line">PIDFile=/home/teamspeak/ts3server.pid</span><br><span class="line">RestartSec=15</span><br><span class="line">Restart=always</span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:wq</span><br></pre></td></tr></table></figure>
+<p>保存退出</p>
+<p>如果你的服务器打开了防火墙，就需要添加如下规则，对CentOS7上的firewall使用如下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=9987/udp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=10011/tcp --permanent</span><br><span class="line">firewall-cmd --zone=public --add-port=30033/tcp --permanent</span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+<h4 id="启动TS服务"><a href="#启动TS服务" class="headerlink" title="启动TS服务"></a>启动TS服务</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl start teamspeak</span><br><span class="line">systemctl enable teamspeak</span><br></pre></td></tr></table></figure>
+<p>确保TeamSpeak服务正确运行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status teamspeak</span><br></pre></td></tr></table></figure>
+<h4 id="管理员登陆TS服务器"><a href="#管理员登陆TS服务器" class="headerlink" title="管理员登陆TS服务器"></a>管理员登陆TS服务器</h4><p>TS服务器第一次运行时，会生成一个一次性的权限密钥，用于给你本地端设置管理员权限。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /home/teamspeak/logs/ts3server_*</span><br></pre></td></tr></table></figure>
+<p>应该能在最后几行看到ServerAdmin privilege key，登陆ts服务器，客户端输入token=后面的privilege key，你就是服务器管理员了。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/14/hello-world/" class="archive-article-date">
-  	<time datetime="2019-05-14T13:40:45.438Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/05/14/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/18/hexo发布文章到个人博客上/" class="archive-article-date">
-  	<time datetime="2019-04-18T12:27:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/18/hexo发布文章到个人博客上/">hexo发布文章到个人博客上</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">hexo发布文章</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习资料//" class="article-tag-list-link color5">学习资料</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/11/数据库练习/" class="archive-article-date">
-  	<time datetime="2019-02-11T10:27:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/11/数据库练习/">数据库练习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">数据库练习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/学习资料//" class="article-tag-list-link color5">学习资料</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/18/centos7下利用ASF V4实现steam云挂卡/" class="archive-article-date">
-  	<time datetime="2019-01-18T12:27:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/18/centos7下利用ASF V4实现steam云挂卡/">centos7下利用ASF实现steam云挂卡</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">centos7下利用ASF实现steam云挂卡</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">centos7</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ASF云挂卡</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Teamspeaks3</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/教程//" class="article-tag-list-link color3">教程</a>
+        			<a href="/categories/学习资料//" class="article-tag-list-link color5">学习资料</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://wernerhai.github.io/2018/06/01/在CentOS7上搭建Teamspeak3服务器/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/01/18/centos7下利用ASF V4实现steam云挂卡/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          centos7下利用ASF实现steam云挂卡
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -376,8 +385,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
