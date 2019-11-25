@@ -8,21 +8,21 @@
   <link rel="dns-prefetch" href="https://wernerhai.github.io">
   <title>centos7下利用ASF实现steam云挂卡 | 海深湛蓝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本次使用的搬瓦工美国服务器，系统为centos7。（国内服务器总是因为网络问题出现各种奇奇怪怪的问题） 国内服务器需要安装ASCF，才能正常使用ASF（ASCF项目链接：https://steamcn.com/t339641-1-1） 一、环境搭建虽然ASF支持linux，但实际上是个C#程序，需要微软的 .Net Core 2.0环境。（微软官方安装文档：https://www.microsof">
+  <meta name="description" content="本次使用的搬瓦工美国服务器，系统为centos7。（国内服务器总是因为网络问题出现各种奇奇怪怪的问题） 国内服务器需要安装ASCF，才能正常使用ASF（ASCF项目链接：https://keylol.com/t339641-1-1） 一、环境搭建虽然ASF支持linux，但实际上是个C#程序，需要微软的 .Net Core 2.0环境。（微软官方安装文档：https://www.microsoft">
 <meta name="keywords" content="centos7下利用ASF实现steam云挂卡,ASF云挂卡">
 <meta property="og:type" content="article">
 <meta property="og:title" content="centos7下利用ASF实现steam云挂卡">
 <meta property="og:url" content="https://wernerhai.github.io/2019/01/18/centos7下利用ASF V4实现steam云挂卡/index.html">
 <meta property="og:site_name" content="海深湛蓝">
-<meta property="og:description" content="本次使用的搬瓦工美国服务器，系统为centos7。（国内服务器总是因为网络问题出现各种奇奇怪怪的问题） 国内服务器需要安装ASCF，才能正常使用ASF（ASCF项目链接：https://steamcn.com/t339641-1-1） 一、环境搭建虽然ASF支持linux，但实际上是个C#程序，需要微软的 .Net Core 2.0环境。（微软官方安装文档：https://www.microsof">
+<meta property="og:description" content="本次使用的搬瓦工美国服务器，系统为centos7。（国内服务器总是因为网络问题出现各种奇奇怪怪的问题） 国内服务器需要安装ASCF，才能正常使用ASF（ASCF项目链接：https://keylol.com/t339641-1-1） 一、环境搭建虽然ASF支持linux，但实际上是个C#程序，需要微软的 .Net Core 2.0环境。（微软官方安装文档：https://www.microsoft">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://wernerhai.github.io/assets/1522512453213483.png">
 <meta property="og:image" content="https://wernerhai.github.io/assets/1522513826341274.png">
 <meta property="og:image" content="https://wernerhai.github.io/2019/01/18/centos7下利用ASF%20V4实现steam云挂卡/assets/asf.png">
-<meta property="og:updated_time" content="2019-11-25T10:56:50.309Z">
+<meta property="og:updated_time" content="2019-11-25T11:11:29.485Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="centos7下利用ASF实现steam云挂卡">
-<meta name="twitter:description" content="本次使用的搬瓦工美国服务器，系统为centos7。（国内服务器总是因为网络问题出现各种奇奇怪怪的问题） 国内服务器需要安装ASCF，才能正常使用ASF（ASCF项目链接：https://steamcn.com/t339641-1-1） 一、环境搭建虽然ASF支持linux，但实际上是个C#程序，需要微软的 .Net Core 2.0环境。（微软官方安装文档：https://www.microsof">
+<meta name="twitter:description" content="本次使用的搬瓦工美国服务器，系统为centos7。（国内服务器总是因为网络问题出现各种奇奇怪怪的问题） 国内服务器需要安装ASCF，才能正常使用ASF（ASCF项目链接：https://keylol.com/t339641-1-1） 一、环境搭建虽然ASF支持linux，但实际上是个C#程序，需要微软的 .Net Core 2.0环境。（微软官方安装文档：https://www.microsoft">
 <meta name="twitter:image" content="https://wernerhai.github.io/assets/1522512453213483.png">
   
     <link rel="alternative" href="/atom.xml" title="海深湛蓝" type="application/atom+xml">
@@ -190,7 +190,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>本次使用的搬瓦工美国服务器，系统为centos7。（国内服务器总是因为网络问题出现各种奇奇怪怪的问题）</p>
-<p>国内服务器需要安装ASCF，才能正常使用ASF（ASCF项目链接：<a href="https://steamcn.com/t339641-1-1）" target="_blank" rel="noopener">https://steamcn.com/t339641-1-1）</a></p>
+<p>国内服务器需要安装ASCF，才能正常使用ASF（ASCF项目链接：<a href="https://keylol.com/t339641-1-1）" target="_blank" rel="noopener">https://keylol.com/t339641-1-1）</a></p>
 <h3 id="一、环境搭建"><a href="#一、环境搭建" class="headerlink" title="一、环境搭建"></a>一、环境搭建</h3><p>虽然ASF支持linux，但实际上是个C#程序，需要微软的 .Net Core 2.0环境。（微软官方安装文档：<a href="https://www.microsoft.com/net/learn/get-started/linux/centos）" target="_blank" rel="noopener">https://www.microsoft.com/net/learn/get-started/linux/centos）</a></p>
 <p><strong>1.添加Microsoft产品feed</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc</span><br></pre></td></tr></table></figure>
@@ -495,19 +495,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Teamspeaks3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">hexo发布文章</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">数据库练习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">centos7</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Teamspeaks3</a>
               </li>
             
             <div class="clearfix"></div>
