@@ -166,6 +166,120 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-CentOS安装Node.JS和npm的两种方式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/02/CentOS安装Node.JS和npm的两种方式/">CentOS安装Node.JS和npm的两种方式</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/02/CentOS安装Node.JS和npm的两种方式/" class="archive-article-date">
+  	<time datetime="2020-05-02T12:27:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="yum安装"><a href="#yum安装" class="headerlink" title="yum安装"></a>yum安装</h1><p>yum安装是将yum源中的rpm包下载到本地，安装这个rpm包。这个rpm包是别人编译安装好的二进制包。这种方式方便快捷，特别是不用考虑包依赖。</p>
+<h6 id="1、了解linux版本"><a href="#1、了解linux版本" class="headerlink" title="1、了解linux版本"></a>1、了解linux版本</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -a  命令查看到我的Linux系统位数是64位</span><br></pre></td></tr></table></figure>
+<h6 id="2、添加-epel-源"><a href="#2、添加-epel-源" class="headerlink" title="2、添加 epel 源"></a>2、添加 epel 源</h6><p>64位:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm</span><br></pre></td></tr></table></figure>
+<p>32位:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm</span><br></pre></td></tr></table></figure>
+<h6 id="3、导入-key"><a href="#3、导入-key" class="headerlink" title="3、导入 key"></a>3、导入 key</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6</span><br></pre></td></tr></table></figure>
+<h6 id="4、添加-remi-源"><a href="#4、添加-remi-源" class="headerlink" title="4、添加 remi 源"></a>4、添加 remi 源</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm</span><br><span class="line">rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-remi</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl --silent --location https://rpm.nodesource.com/setup_5.x | bash -</span><br><span class="line">curl -sL https://rpm.nodesource.com/setup_10.x | bash -</span><br><span class="line">yum -y install nodejs</span><br></pre></td></tr></table></figure>
+<h6 id="5、检查Node-js和npm版本"><a href="#5、检查Node-js和npm版本" class="headerlink" title="5、检查Node.js和npm版本"></a>5、检查Node.js和npm版本</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<h1 id="源码安装"><a href="#源码安装" class="headerlink" title="源码安装"></a>源码安装</h1><p>源码安装，下载是源码包，要进行编译和安装，编译过程，可以进行参数设定。这种方式灵活性比较大，版本/参数可以自己选择。</p>
+<p>1、创建目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir node</span><br><span class="line">cd node</span><br></pre></td></tr></table></figure>
+<p>2、下载安装包</p>
+<p>官网下载合适版本<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a> ，上传到指定位置</p>
+<p>或者用wget下载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://nodejs.org/dist/v12.16.3/node-v12.16.3-linux-x64.tar.xz`</span><br></pre></td></tr></table></figure>
+<p>3、解压安装包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xz -d node-v12.16.3-linux-x64.tar.xz</span><br><span class="line">tar -xvf node-v12.16.3-linux-x64.tar</span><br></pre></td></tr></table></figure>
+<p>4、进入目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd node-v12.16.3-linux-x64/bin</span><br></pre></td></tr></table></figure>
+<p>5、执行 pwd 查看当前目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@107 node-v12.16.3-linux-x64]# pwd</span><br><span class="line">/root/node/node-v12.16.3-linux-x64/bin</span><br></pre></td></tr></table></figure>
+<p>6、软链接  #把上面查到的位置复制下来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s /root/node/node-v12.16.3-linux-x64/bin/node /usr/bin/node			</span><br><span class="line">ln -s /root/node/node-v12.16.3-linux-x64/bin/npm /usr/bin/npm</span><br></pre></td></tr></table></figure>
+<p>7、测试Node.js和npm版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>运行 node -v 如果报错bash: ./node: cannot execute binary file</p>
+<p>可能是下载的node版本不对，我就因为浏览器自动翻译导致下载的位置不对，弄了好久才发现</p>
+<p>Linux系统目录说明：<br>    /bin       存放所有用户皆可用的系统程序，系统启动或者系统修复时可用<br>    /sbin     存放超级用户才能使用的系统程序<br>    /usr/bin       存放所有用户都可用的应用程序<br>    /usr/sbin     存放超级用户才能使用的应用程序<br>    /usr/local/bin       存放所有用户都可用的与本地机器无关的程序<br>    /usr/local/sbin     存放超级用户才能使用的与本地机器无关的程序</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">hexo发布文章</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/学习资料//" class="article-tag-list-link color5">学习资料</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/02/CentOS安装Node.JS和npm的两种方式/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hexo发布文章到个人博客上" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -591,6 +705,145 @@
 
 
   
+    <article id="post-centos7搭建kms" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/18/centos7搭建kms/">centos7搭建kms</a>
+    </h1>
+  
+
+        
+        <a href="/2015/03/18/centos7搭建kms/" class="archive-article-date">
+  	<time datetime="2015-03-18T12:27:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-03-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="centos7安装kms"><a href="#centos7安装kms" class="headerlink" title="centos7安装kms"></a>centos7安装kms</h2><p>先安装git：</p>
+<blockquote>
+<p>yum -y install git</p>
+</blockquote>
+<p>安装py-kms所需依赖：</p>
+<blockquote>
+<p>yum -y install python-argparse</p>
+</blockquote>
+<p>拉取py-kms项目文件：</p>
+<blockquote>
+<p>git clone <a href="https://github.com/WernerHai/py-kms.git" target="_blank" rel="noopener">https://github.com/WernerHai/py-kms.git</a></p>
+</blockquote>
+<p>进入到py-kms根目录：</p>
+<blockquote>
+<p>cd py-kms</p>
+</blockquote>
+<p>运行程序：</p>
+<blockquote>
+<p>python server.py</p>
+</blockquote>
+<p>看到如下图回显就说明程序启动成功了：</p>
+<p><img src="https://s2.ax1x.com/2019/09/04/nVtgNd.png" alt></p>
+<p>使用screen将py-kms放到后台运行：</p>
+<blockquote>
+<p>screen -dmS jihuo python server.py</p>
+</blockquote>
+<p>查看py-kms运行状态：</p>
+<blockquote>
+<p>ps -ef | grep jihuo</p>
+</blockquote>
+<p><img src="https://s2.ax1x.com/2019/09/04/nVt24A.png" alt></p>
+<p>不想使用py-kms了？使用如下命令可强制退出：</p>
+<blockquote>
+<p>kill -9 上图使用psef命令查看到的py-kms进程ID</p>
+</blockquote>
+<p>你需要注意的是py-kms占用1688端口，需要放行这个端口或是关闭防火墙</p>
+<h4 id="激活："><a href="#激活：" class="headerlink" title="激活："></a>激活：</h4><p>对于绝大部分VL版（Volume License）的Windows系统和Office软件，都可以使用KMS激活。操作步骤概括如下：</p>
+<p><strong>1、对于Windows系统VL版本，以管理员身份打开命令提示符，然后输入以下命令：</strong></p>
+<blockquote>
+<p>wmic os get caption                             ## 查看系统版本<br>slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx  #配置系统序列号<br>slmgr /skms 你的域名或IP                   #配置KMS服务器地址<br>slmgr /ato                                              #激活系统<br>slmgr /xpr                                             #查看系统激活到期时间<br>slmgr /dlv                                             #查看授权详细信息</p>
+</blockquote>
+<p>或者直接弹窗方式：</p>
+<blockquote>
+<p>slmgr /skms 你的域名或IP<br>slmgr /ato<br>slmgr /xpr</p>
+</blockquote>
+<p><strong>2、对于Office软件VL版本，以管理员身份打开命令提示符，然后进入软件安装目录：</strong></p>
+<p>这里以Office 2013为例：切换至 office 安装目录（依据个人安装路径）</p>
+<p>32位版本：</p>
+<blockquote>
+<p>cd “%ProgramFiles(x86)%\Microsoft Office\Office15”</p>
+</blockquote>
+<p>64位版本：</p>
+<blockquote>
+<p>cd “%ProgramFiles%\Microsoft Office\Office15”</p>
+</blockquote>
+<p>然后执行以下命令：</p>
+<blockquote>
+<p>cscript ospp.vbs /inpkey: XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99        ## 安装 Office GVLK 激活密钥</p>
+<p>cscript ospp.vbs /sethst: 你的域名或IP        ## 执行注册 KMS 服务器</p>
+<p>cscript ospp.vbs /act            ## 激活 OFFICE</p>
+</blockquote>
+<p>通过以上步骤就可以激活你的Windows系统和Office软件，但是值得注意的是，KMS方式激活的有效期只有180天，因此每不到半年需要重新激活一次。</p>
+<p>windows:可以通过批处理直接执行激活，目前只是简单的激活，还没实现对系统版本的判断并修改序列号。</p>
+<blockquote>
+<p>@echo off<br>cscript //Nologo %windir%\system32\slmgr.vbs /skms 你的域名或IP<br>cscript //Nologo %windir%\system32\slmgr.vbs /ato<br>pause<br>cscript //Nologo %windir%\system32\slmgr.vbs /dlv<br>echo 按任意键退出 …<br>pause &gt; nul<br>exit</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/教程//" class="article-tag-list-link color3">教程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/03/18/centos7搭建kms/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
 
 
@@ -684,7 +937,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">数据库练习</a>
+                <a href="javascript:void(0)" class="js-tag color4">hexo发布文章</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -696,15 +949,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">数据库练习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">centos7</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Teamspeaks3</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">hexo发布文章</a>
               </li>
             
             <div class="clearfix"></div>

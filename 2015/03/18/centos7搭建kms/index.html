@@ -6,20 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://wernerhai.github.io">
-  <title>categories | 海深湛蓝</title>
+  <title>centos7搭建kms | 海深湛蓝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基于hexo的Github Pages个人博客网站">
+  <meta name="description" content="centos7安装kms先安装git：  yum -y install git  安装py-kms所需依赖：  yum -y install python-argparse  拉取py-kms项目文件：  git clone https://github.com/WernerHai/py-kms.git  进入到py-kms根目录：  cd py-kms  运行程序：  python server">
 <meta name="keywords" content="海深湛蓝博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://wernerhai.github.io/categories/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="centos7搭建kms">
+<meta property="og:url" content="https://wernerhai.github.io/2015/03/18/centos7搭建kms/index.html">
 <meta property="og:site_name" content="海深湛蓝">
-<meta property="og:description" content="基于hexo的Github Pages个人博客网站">
+<meta property="og:description" content="centos7安装kms先安装git：  yum -y install git  安装py-kms所需依赖：  yum -y install python-argparse  拉取py-kms项目文件：  git clone https://github.com/WernerHai/py-kms.git  进入到py-kms根目录：  cd py-kms  运行程序：  python server">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-15T12:17:50.030Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/09/04/nVtgNd.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/09/04/nVt24A.png">
+<meta property="og:updated_time" content="2020-05-02T14:13:20.926Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="基于hexo的Github Pages个人博客网站">
+<meta name="twitter:title" content="centos7搭建kms">
+<meta name="twitter:description" content="centos7安装kms先安装git：  yum -y install git  安装py-kms所需依赖：  yum -y install python-argparse  拉取py-kms项目文件：  git clone https://github.com/WernerHai/py-kms.git  进入到py-kms根目录：  cd py-kms  运行程序：  python server">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/09/04/nVtgNd.png">
   
     <link rel="alternative" href="/atom.xml" title="海深湛蓝" type="application/atom+xml">
   
@@ -165,27 +168,93 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-centos7搭建kms" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      categories
+      centos7搭建kms
     </h1>
   
 
         
-        <a href="/categories/index.html" class="archive-article-date">
-  	<time datetime="2019-05-15T12:15:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-15</time>
+        <a href="/2015/03/18/centos7搭建kms/" class="archive-article-date">
+  	<time datetime="2015-03-18T12:27:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-03-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="centos7安装kms"><a href="#centos7安装kms" class="headerlink" title="centos7安装kms"></a>centos7安装kms</h2><p>先安装git：</p>
+<blockquote>
+<p>yum -y install git</p>
+</blockquote>
+<p>安装py-kms所需依赖：</p>
+<blockquote>
+<p>yum -y install python-argparse</p>
+</blockquote>
+<p>拉取py-kms项目文件：</p>
+<blockquote>
+<p>git clone <a href="https://github.com/WernerHai/py-kms.git" target="_blank" rel="noopener">https://github.com/WernerHai/py-kms.git</a></p>
+</blockquote>
+<p>进入到py-kms根目录：</p>
+<blockquote>
+<p>cd py-kms</p>
+</blockquote>
+<p>运行程序：</p>
+<blockquote>
+<p>python server.py</p>
+</blockquote>
+<p>看到如下图回显就说明程序启动成功了：</p>
+<p><img src="https://s2.ax1x.com/2019/09/04/nVtgNd.png" alt></p>
+<p>使用screen将py-kms放到后台运行：</p>
+<blockquote>
+<p>screen -dmS jihuo python server.py</p>
+</blockquote>
+<p>查看py-kms运行状态：</p>
+<blockquote>
+<p>ps -ef | grep jihuo</p>
+</blockquote>
+<p><img src="https://s2.ax1x.com/2019/09/04/nVt24A.png" alt></p>
+<p>不想使用py-kms了？使用如下命令可强制退出：</p>
+<blockquote>
+<p>kill -9 上图使用psef命令查看到的py-kms进程ID</p>
+</blockquote>
+<p>你需要注意的是py-kms占用1688端口，需要放行这个端口或是关闭防火墙</p>
+<h4 id="激活："><a href="#激活：" class="headerlink" title="激活："></a>激活：</h4><p>对于绝大部分VL版（Volume License）的Windows系统和Office软件，都可以使用KMS激活。操作步骤概括如下：</p>
+<p><strong>1、对于Windows系统VL版本，以管理员身份打开命令提示符，然后输入以下命令：</strong></p>
+<blockquote>
+<p>wmic os get caption                             ## 查看系统版本<br>slmgr /ipk xxxxx-xxxxx-xxxxx-xxxxx  #配置系统序列号<br>slmgr /skms 你的域名或IP                   #配置KMS服务器地址<br>slmgr /ato                                              #激活系统<br>slmgr /xpr                                             #查看系统激活到期时间<br>slmgr /dlv                                             #查看授权详细信息</p>
+</blockquote>
+<p>或者直接弹窗方式：</p>
+<blockquote>
+<p>slmgr /skms 你的域名或IP<br>slmgr /ato<br>slmgr /xpr</p>
+</blockquote>
+<p><strong>2、对于Office软件VL版本，以管理员身份打开命令提示符，然后进入软件安装目录：</strong></p>
+<p>这里以Office 2013为例：切换至 office 安装目录（依据个人安装路径）</p>
+<p>32位版本：</p>
+<blockquote>
+<p>cd “%ProgramFiles(x86)%\Microsoft Office\Office15”</p>
+</blockquote>
+<p>64位版本：</p>
+<blockquote>
+<p>cd “%ProgramFiles%\Microsoft Office\Office15”</p>
+</blockquote>
+<p>然后执行以下命令：</p>
+<blockquote>
+<p>cscript ospp.vbs /inpkey: XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99        ## 安装 Office GVLK 激活密钥</p>
+<p>cscript ospp.vbs /sethst: 你的域名或IP        ## 执行注册 KMS 服务器</p>
+<p>cscript ospp.vbs /act            ## 激活 OFFICE</p>
+</blockquote>
+<p>通过以上步骤就可以激活你的Windows系统和Office软件，但是值得注意的是，KMS方式激活的有效期只有180天，因此每不到半年需要重新激活一次。</p>
+<p>windows:可以通过批处理直接执行激活，目前只是简单的激活，还没实现对系统版本的判断并修改序列号。</p>
+<blockquote>
+<p>@echo off<br>cscript //Nologo %windir%\system32\slmgr.vbs /skms 你的域名或IP<br>cscript //Nologo %windir%\system32\slmgr.vbs /ato<br>pause<br>cscript //Nologo %windir%\system32\slmgr.vbs /dlv<br>echo 按任意键退出 …<br>pause &gt; nul<br>exit</p>
+</blockquote>
+
       
 
       
@@ -220,6 +289,17 @@
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/教程//" class="article-tag-list-link color3">教程</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -269,7 +349,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://wernerhai.github.io/categories/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://wernerhai.github.io/2015/03/18/centos7搭建kms/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -281,6 +361,20 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2018/06/01/在CentOS7上搭建Teamspeak3服务器/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          在centos7上搭建Teamspeaks3服务器
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -331,7 +425,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
